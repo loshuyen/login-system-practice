@@ -1,10 +1,11 @@
-const mysql = require('mysql');
+const mysql = require('mysql2');
 const keys = require('../config/keys');
 
 const db = mysql.createConnection({
   host: 'localhost',
   user: 'root',
   password: keys.mysqlPwd,
+  database: 'shop_website'
 });
 
 db.connect(function (err) {
@@ -13,3 +14,4 @@ db.connect(function (err) {
 });
 
 module.exports = db;
+
