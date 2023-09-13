@@ -1,20 +1,12 @@
 const express = require('express');
 const app = express();
-const session = require('express-session');
-const keys = require('./config/keys');
+const usePassport = require('./services/passport');
 
-const userRouter = require('./routes/userRouter');
+const authRouter = require('./routes/authRouter');
 
-app.use(
-  session({
-    secret: keys.cookieKey,
-    resave: false,
-    saveUninitialized: true,
-    cookie: { secure: true },
-  })
-);
+usePassport(app);
 app.use(express.urlencoded({ extended: false }));
-app.use(userRouter);
+app.use(authRouter);
 
 const PORT = process.env.PORT || 8000;
 app.listen(PORT, () => {
