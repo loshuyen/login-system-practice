@@ -4,7 +4,6 @@ const db = require('../services/db');
 const bcrypt = require('bcrypt');
 const passport = require('passport');
 
-
 authRouter.get('/users/register', (req, res) => {
   res.send('Registration Page!!!');
 });
