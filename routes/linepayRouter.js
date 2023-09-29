@@ -66,6 +66,9 @@ linepayRouter.post('/payments/linepay/:orderId', async (req, res) => {
   if (response.data.returnCode === '0000') {
     res.redirect(response.data.info.paymentUrl.web);
   }
+  else {
+  res.send(response.data.returnMessage);
+  }
 });
 
 linepayRouter.get('/payments/linepay/confirm', async (req, res) => {

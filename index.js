@@ -6,6 +6,7 @@ const authRouter = require('./routes/authRouter');
 const cartRouter = require('./routes/cartRouter');
 const orderRouter = require('./routes/orderRouter');
 const linepayRouter = require('./routes/linepayRouter');
+const ecpayRouter = require('./routes/ecpayRouter');
 
 usePassport(app);
 app.use(express.urlencoded({ extended: false }));
@@ -13,6 +14,7 @@ app.use(authRouter);
 app.use(cartRouter);
 app.use(orderRouter);
 app.use(linepayRouter);
+app.use(ecpayRouter);
 
 const PORT = process.env.PORT || 8000;
 app.listen(PORT, () => {
