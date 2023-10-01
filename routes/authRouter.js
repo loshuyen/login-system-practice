@@ -3,6 +3,7 @@ const authRouter = express.Router();
 const db = require('../services/db');
 const bcrypt = require('bcrypt');
 const passport = require('passport');
+const requireLogin = require('../middlewares/requireLogin');
 
 authRouter.get('/users/register', (req, res) => {
   res.send('Registration Page!!!');
@@ -36,21 +37,13 @@ authRouter.post(
   }
 );
 
-authRouter.get('/users/logout', (req, res) => {
+authRouter.get('/users/logout', requireLogin, (req, res) => {
   req.logout((err) => {
     if (err) {
       res.send(err);
     }
   });
   res.redirect('/');
-});
-
-authRouter.get('/', (req, res) => {
-  res.send(req.user);
-});
-
-authRouter.get('/current_user', (req, res) => {
-  res.send(req.isAuthenticated());
 });
 
 module.exports = authRouter;
