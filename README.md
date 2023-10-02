@@ -1,4 +1,4 @@
-# Features - 專案功能
+# 專案功能
 ### 註冊會員、會員登入
 - Local login
 - passport.js, express-session, bcrypt
@@ -82,13 +82,33 @@ LinePay Confirm API GET /payments/linepay/confirm
 
 綠界server notify route POST  /payments/ecpay/notify
 
-# MySQL資料庫
-![Untitled Diagram](https://github.com/loshuyen/shop-practice/assets/138111003/a0cfdd0e-a4ee-49a3-b5d0-a47b8105e1c4)
 # 金流串接
 - LINE Pay
 - 綠界科技
+# 環境設定**
+- [安裝MySQL資料庫](https://dev.mysql.com/downloads/mysql/)
+- [安裝Node.js](https://nodejs.org/zh-tw/download)
+- [申請LINE Pay測試帳號](https://pay.line.me/tw/developers/techsupport/sandbox/creation?locale=zh_TW)
+- [綠界API介接相關資訊](https://developers.ecpay.com.tw/?p=2856)
+# 關聯式資料庫架構
+![Untitled Diagram](https://github.com/loshuyen/shop-practice/assets/138111003/a0cfdd0e-a4ee-49a3-b5d0-a47b8105e1c4)
 # How to use
-
-# **Environment setup - 環境建置**
-
-# **Installation - 專案安裝說明**
+1. 打開Terminal，將此專案clone至電腦
+```Git clone https://github.com/loshuyen/shop-practice.git```
+2. 進入專案資料夾
+```cd shop-project```
+3. 下載專案用相依套件
+```npm install```
+4. 設定環境變數：在config資料夾內新增dev.js檔案，並填入以下變數
+```
+  const keys = {
+  mysqlPwd: MYSQL密碼,
+  cookieKey: 自行新增一段字串cookie加密用,
+  linepayID: LINE Pay channel ID,
+  linepayKey: LINE Pay Secret Key,
+  ecpayMerchantID: 綠界科技Merchant ID,
+  ecpayHashKey: 綠界科技Hash KEY,
+  ecpayHashIv: 綠界科技Hash IV,
+};
+module.exports = keys;
+```
