@@ -1,15 +1,9 @@
 # Features - 專案功能
-
-## 註冊會員、會員登入
-
-Local login
-
-passport.js, express-session, bcrypt
-
-## API Routes
-
+### 註冊會員、會員登入
+- Local login
+- passport.js, express-session, bcrypt
+# API Routes
 ### For Administrator
-
 ### Authentication
 
 登入頁面 GET /admin/login
@@ -88,16 +82,11 @@ LinePay Confirm API GET /payments/linepay/confirm
 
 綠界server notify route POST  /payments/ecpay/notify
 
-## MySQL資料庫
-
+# MySQL資料庫
 ![Untitled Diagram](https://github.com/loshuyen/shop-practice/assets/138111003/a0cfdd0e-a4ee-49a3-b5d0-a47b8105e1c4)
-
-## 金流串接
-
-LINE Pay
-
-綠界科技
-
+# 金流串接
+- LINE Pay
+- 綠界科技
 # How to use
 
 # **Environment setup - 環境建置**
