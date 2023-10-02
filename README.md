@@ -1,7 +1,13 @@
 # 專案功能
-### 註冊會員、會員登入
-- Local login
-- passport.js, express-session, bcrypt
+1. 提供使用者與管理員註冊、登入等功能
+- 使用passport套件進行帳號密碼登入驗證
+- 使用bcrypt套件將密碼加密
+2. 使用MySQL資料庫儲存用戶、訂單、購物車、商品庫存等資料
+- 使用mysql2套件對資料庫進行操作
+3. 串接第三方金流
+- LINE Pay
+- 綠界科技
+4. 提供RESTful API給前端串接
 # API Routes
 ### For Administrator
 ### Authentication
@@ -82,9 +88,6 @@
 
 - 綠界server notify route POST  /payments/ecpay/notify
 
-# 金流串接
-- LINE Pay
-- 綠界科技
 # 環境設定**
 - [安裝MySQL資料庫](https://dev.mysql.com/downloads/mysql/)
 - [安裝Node.js](https://nodejs.org/zh-tw/download)
@@ -99,7 +102,7 @@
 ```cd shop-project```
 3. 下載專案用相依套件
 ```npm install```
-4. 設定環境變數：在config資料夾內新增dev.js檔案，並填入以下變數
+4. 設定環境變數：在config資料夾內新增dev.js檔案，並填入以下code
 ```
   const keys = {
   mysqlPwd: MYSQL密碼,
