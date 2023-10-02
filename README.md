@@ -2,7 +2,7 @@
 
 ## 註冊會員、會員登入
 
-Local login (SESSION)
+Local login
 
 passport.js, express-session, bcrypt
 
